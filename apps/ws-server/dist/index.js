@@ -1,10 +1,13 @@
-import { WebSocketServer } from "ws";
-import { client } from "@repo/db/clients";
-const server = new WebSocketServer({
-    port: 3001
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const ws_1 = require("ws");
+const clients_1 = require("@repo/db/clients");
+const server = new ws_1.WebSocketServer({
+    port: 3001,
+    host: '0.0.0.0' // This makes it listen on all network interfaces
 });
 server.on("connection", async (socket) => {
-    await client.user.create({
+    await clients_1.client.user.create({
         data: {
             username: Math.random().toString(),
             password: Math.random().toString()

@@ -1,9 +1,10 @@
 import { WebSocketServer } from "ws";
-import { client } from "@repo/db/clients"
+import { client } from "@repo/db/clients";
 
 
 const server = new WebSocketServer({
-    port:3001
+    port: 3001,
+    host: '0.0.0.0'  // This makes it listen on all network interfaces
 });
 
 server.on("connection",async (socket)=>{
