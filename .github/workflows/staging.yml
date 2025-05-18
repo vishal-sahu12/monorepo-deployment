@@ -24,8 +24,19 @@ jobs:
                 script: |
                     echo """""""Change Dir"""""""
                     cd monorepo-deployment/
-                    echo """""""""Directory is changed""""""""""'"
+                    echo """""""Current directory""""""""""'"
                     pwd
+                    echoo """"""""Git Pull"""""
+                    git pull origin main
+                    echo """"""PNPM install"""""""
+                    pnpm install
+                    echo """"""PNPM Build"""""""
+                    pnpm run build
+                    echo """"""PM2 server restart"""""""
+                    pm2 restart fe-server
+                    pm2 restart ws-server
+                    pm2 restart http-server
+                    
 
 
         
