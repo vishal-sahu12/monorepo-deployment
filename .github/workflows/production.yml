@@ -27,7 +27,7 @@ jobs:
                     echo """""""Current directory""""""""""'"
                     pwd
                     echo """"""""Git Pull"""""
-                    git pull origin main
+                    git pull origin production
                     echo """"""PNPM install"""""""
                     pnpm install
                     echo """"""PNPM Build"""""""
